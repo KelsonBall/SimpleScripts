@@ -23,11 +23,11 @@ def test_has_multiple_flags():
 
 def test_gets_sys_args():
     commands = Commands([])
-    print(commands.args)
+    print("Parsed command line args:", commands.args)
     assert(len(commands.args) == len(sys.argv) - 1), "Args is not empty and matches length of system args without file name"
 
 test_flag_exists()
 test_flag_has_correct_value()
 test_has_multiple_flags()
-if len(sys.argv) > 0:
-    test_gets_sys_args()
+test_gets_sys_args()
+print("Passed")
