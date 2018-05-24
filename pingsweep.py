@@ -21,7 +21,7 @@ Flags
 
 --to <number>
 	description:
-		indicates end of sweep range (non inclusive)
+		indicates end of sweep range
 	defaults to:
 		--to 255
 
@@ -46,7 +46,7 @@ else:
 	ping_command += " " + (commands.string_of("address") or "10.11.1") + "."
 
 	start = commands.int_of("from") or 1
-	end = commands.int_of("to") or 255
+	end = (commands.int_of("to") or 255) + 1
 	
 
 	# sweep address space from 'start' to 'end'
